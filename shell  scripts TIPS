@@ -1,0 +1,32 @@
+How to get the name of present working directory
+==================================================
+
+command 1: basename "pwd"
+command 2: pwd | rev | cut -d "/" -f 1 | rev
+
+Firs rev ------------->  reverse  the pwd command so that last word came into first
+Second cut -d "/" ---->  it cuts the delimator "/"  and then -f 1 print the firt word
+Third  rev        ---->  Then it reverese the o/p word  in  correct sequence.
+
+
+How to shoren the command
+==========================
+
+vi ~/.bashrc
+
+alias pwf='pwd | rev | cut -d "/" -f 1 | rev'
+
+Then save and exit
+Then you need to source that file to load into that current shell.
+
+source  ~/.bashrc
+
+Now if you run pwf , you will get the desired o/p.
+
+How to print the file name in a shell scripts
+================================================
+
+it can be print with $0 argument
+
+echo $0 will print the shell scripts name.
+

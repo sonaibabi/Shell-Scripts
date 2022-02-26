@@ -1,3 +1,7 @@
+Sripts will Monitor app log folder and make sure always only 10 files will present in the folder and  it will delete all the extra file. The sortin will be based on
+time of modification
+==========================================================
+
 #!/bin/sh
 folder_path="/home/deekshithsn1/application_logs"
 cd $folder_path

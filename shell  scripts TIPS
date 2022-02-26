@@ -30,3 +30,33 @@ it can be print with $0 argument
 
 echo $0 will print the shell scripts name.
 
+=====================================================
+
+Shell  Scripts should have two option -b and -t . if user specified ./argument.sh -b Develop then o/p should be Develop is a branch.  if user specified ./argument.sh -t 19.02 then o/p 
+should be 19.02  is a tag annd if both specified it should print both
+===============================================================
+
+Solution:  This can be achieved usin while case statement
+Code:
+
+-------------
+
+while
+    [ -n "$1" ]
+do
+    case "$1" in
+    -b)
+        echo "$2 is a branch"
+        shift
+        ;;
+    -t)
+       echo "$2 is a tag"
+       shift
+       ;;
+    *)
+        echo "Option $1 not recognized"
+        exit 1
+        ;;
+    esac
+    shift
+done
